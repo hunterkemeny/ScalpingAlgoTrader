@@ -26,10 +26,22 @@ In order to gather this data, you must have a Wharton Research Data Services (WD
 2. The validation set: The next month of data after the training set data. Same criteria. Rename CSV file validation_set and place in CleanData folder.
 3. The test set: The next month of data after the. Rename CSV file test_set and place in CleanData folder.
 
-Run utils.py to process the individual trade data into minute data. You may find that some of the trades downloaded from WDRS have empty data. You will have to delete these empty trades from the CSV before you run utils.py.
+Run 
+```shell
+$ thon3 utils.py
+```
+to process the individual trade data into minute data. You may find that some of the trades downloaded from WDRS have empty data. You will have to delete these empty trades from the CSV before you run utils.py.
 
 ## Training and hypertuning DNN
-Next, you will have to set up a GCP Ubuntu 18.04 instance and upload the code to a bucket. Instructions on how to do that [here](https://medium.com/automation-generation/build-a-day-trading-algorithm-and-run-it-in-the-cloud-for-free-805450150668). Once everythng is uploaded, run main.py. This script will simultaneously train and tune the DNN. It will output the finished DNN to a folder called saved_model.
+Next, you will have to set up a GCP Ubuntu 18.04 instance and upload the code to a bucket. Instructions on how to do that [here](https://medium.com/automation-generation/build-a-day-trading-algorithm-and-run-it-in-the-cloud-for-free-805450150668). Once everythng is uploaded, run 
+```shell
+$ python3 main.py
+```
+This script will simultaneously train and tune the DNN. It will output the finished DNN to a folder called saved_model.
 
 ## Trading Strategy
-Now you should make an account with [Alpaca](https://alpaca.markets/). Update the auth data in the main method of algo.py with your credentials. Now all you have to do is run algo.py on GCP, and the algo will start trading.
+Now you should make an account with [Alpaca](https://alpaca.markets/). Update the auth data in the main method of algo.py with your credentials. Now all you have to do is run 
+```shell
+$ python3 algo.py
+```
+on GCP, and the algo will start trading.
