@@ -28,7 +28,7 @@ In order to gather this data, you must have a Wharton Research Data Services (WD
 
 Run 
 ```shell
-$ thon3 utils.py
+$ python3 utils.py
 ```
 to process the individual trade data into minute data. You may find that some of the trades downloaded from WDRS have empty data. You will have to delete these empty trades from the CSV before you run utils.py.
 
